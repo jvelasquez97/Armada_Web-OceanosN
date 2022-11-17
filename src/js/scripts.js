@@ -1,3 +1,4 @@
+
 jQuery('.arrow-up').click(function(){
     fullpage_api.moveSectionUp();
 })
@@ -15,12 +16,26 @@ jQuery('.btn-info').click(function(){
 let image = 0
 
 jQuery('.btn-change').click(function(){
-    if(image == 0){
-        jQuery('.slider-interactive').attr('src','src/images/mapa02.jpg')
-        image =1
+    jQuery('.btn-change').removeClass('active')
+    if(jQuery(this).attr('data') == 'barimetria'){
+        jQuery('.before-img').attr('src','src/images/barimetria.jpg')
+        jQuery(this).addClass('active')
+        
     }else{
-        jQuery('.slider-interactive').attr('src','src/images/mapa03.jpg')
-        image =0
+        jQuery('.before-img').attr('src','src/images/satelital.jpg')    
+        jQuery(this).addClass('active')
+    }
+})
+
+jQuery('.btn-change2').click(function(){
+    jQuery('.btn-change2').removeClass('active')
+    if(jQuery(this).attr('data') == 'color'){
+        jQuery('.before-img2').attr('src','src/images/mapa2-02.jpg')
+        jQuery(this).addClass('active')
+        
+    }else{
+        jQuery('.before-img2').attr('src','src/images/mapa2-01.jpg')    
+        jQuery(this).addClass('active')
     }
 })
 
